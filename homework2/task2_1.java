@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.io.IOException;
 import java.util.logging.*;
 
-public class task1 {
+public class task2_1 {
 
     public static int[] sort(int[] array) throws SecurityException, IOException {
-        Logger logger = Logger.getLogger(task1.class.getName());
+        Logger logger = Logger.getLogger(task2_1.class.getName());
         FileHandler fh = new FileHandler("log.txt");
         logger.addHandler(fh);
         SimpleFormatter sFormat = new SimpleFormatter();

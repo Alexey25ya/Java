@@ -9,9 +9,8 @@
 // Студент Краснов получил 5 по предмету Физика.
 
 import java.io.*;
-// import java.util.HashMap;
 
-public class task2 {
+public class task2_2 {
 
     public static void main(String[] args) {
         try (FileReader reader = new FileReader("task2.json")) {
@@ -19,15 +18,18 @@ public class task2 {
             int c;
             StringBuilder sb = new StringBuilder();
             while ((c = reader.read()) != -1) {
-                sb.append((char) c);
+                sb.append((char) c);                
             }
-            System.out.print(sb);
-            // String text = sb.toString();
-            // String[] words = text.split(",");
-            // for (String word : words) {
-            // System.out.println(word);
-            // }
-            // HashMap<String, String> map =sb ;
+            String text=sb.toString();
+            StringBuilder sb1 = new StringBuilder();
+            for(char ch : text.toCharArray())
+                if(Character.isLetter(ch) || Character.isDigit(ch) )
+                    sb1.append(ch);
+            text=sb1.toString();
+            text=text.replace("оценка"," получил ");
+            text=text.replace("предмет"," по предмету ");
+            text=text.replace("фамилия","\nСтудент ");
+            System.out.println(text);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
 
