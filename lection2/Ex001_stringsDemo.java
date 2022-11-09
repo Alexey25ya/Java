@@ -1,4 +1,4 @@
-package Lesson_02;
+// package Lesson_02;
 
 public class Ex001_stringsDemo {
     public static void main_(String[] args) {
