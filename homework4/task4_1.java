@@ -3,15 +3,14 @@ package Java.homework4;
 
 import java.util.LinkedList;
 
-/**
- * task4_1
- */
+
+
 public class task4_1 {
 
     public static LinkedList<Integer> fillLinkedList() {
         LinkedList<Integer> ll=new LinkedList<>();
         for (int i=0;i<10;i++){
-            ll.add(i*2-3);            
+            ll.add( 0 + (int)(Math.random()*100));            
         }       
         System.out.println(ll);
         return ll;
@@ -29,10 +28,6 @@ public class task4_1 {
         reverceLinkedList(fillLinkedList());
     }
 }
-//2. Реализуйте очередь с помощью LinkedList со следующими методами:
-// enqueue() - помещает элемент в конец очереди,
-// dequeue() - возвращает первый элемент из очереди и удаляет его,
-// first() - возвращает первый элемент из очереди, не удаляя.
 
 // 3. В калькулятор добавьте возможность отменить последнюю операцию.
 // Пример
