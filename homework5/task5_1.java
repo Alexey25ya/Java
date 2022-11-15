@@ -31,8 +31,10 @@ public class task5_1 {
                         System.out.println(map);
                         break;
                     case ("3"):
-                        System.out.println("Введите номер телефона контакта телефонной книги, который хотите удалить: ");
-                        key = scanner.nextInt();;
+                        System.out
+                                .println("Введите номер телефона контакта телефонной книги, который хотите удалить: ");
+                        key = scanner.nextInt();
+                        ;
                         map.remove(key);
                         System.out.println(map);
                         break;
@@ -66,7 +68,3 @@ public class task5_1 {
     }
 
 }
-
-
-// 3.На шахматной доске расставить 8 ферзей так, чтобы они не били друг друга. И
-// вывести Доску.
