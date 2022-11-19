@@ -14,7 +14,6 @@ package Java.homework6;
 
 // 6.Отфильтровать ноутбуки их первоначального множества и вывести проходящие по условиям.
 
-
 import java.util.*;
 
 public class task {
@@ -22,30 +21,31 @@ public class task {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число для поиска: ");
         System.out.println(
-                "1 по оперативной памяти\n2 по жесткому диску\n3 по операционной системе\n4по цвету\n");
+                "1 по оперативной памяти\n2 по жесткому диску\n3 по операционной системе\n4 по цвету\n");
         System.out.println("Ваш выбор: ");
         return scanner.nextInt();
     }
-    public static void showResult(Map<String, Laptop> result){
-        for (var Laptop : result.entrySet()) {
-            System.out.printf("%s\n%s\n\n", Laptop.getKey(), Laptop.getValue().toString());
+
+    public static void showResult(Map<String, Laptop> result) {
+        for (var laptop : result.entrySet()) {
+            System.out.printf("%s\n%s\n\n", laptop.getKey(), laptop.getValue().toString());
         }
     }
 
     public static void main(String[] args) {
         Map<Integer, String> filter = new HashMap<>();
         Map<String, Laptop> result = new LinkedHashMap<>();
-        Set<Laptop> Laptops = new HashSet<>();
-        Laptop Laptop1 = new Laptop("2 Gb", "2 Tb", "Windows 10","Black");
-        Laptop Laptop2 = new Laptop("2 Gb", "1 Tb", "Windows 10","White");
-        Laptop Laptop3 = new Laptop("4 Gb", "2 Tb", "Mac OS","Green");
-        Laptop Laptop4 = new Laptop("4 Gb", "1 Tb", "Mac OS","White");
-        Laptop Laptop5 = new Laptop("3 Gb", "1 Tb", "Windows 11","Black");
-        Laptops.add(Laptop1);
-        Laptops.add(Laptop2);
-        Laptops.add(Laptop3);
-        Laptops.add(Laptop4);
-        Laptops.add(Laptop5);
+        Set<Laptop> laptops = new HashSet<>();
+        Laptop laptop1 = new Laptop("2 Gb", "2 Tb", "Windows 10", "Black");
+        Laptop laptop2 = new Laptop("2 Gb", "1 Tb", "Windows 10", "White");
+        Laptop laptop3 = new Laptop("4 Gb", "2 Tb", "Mac OS", "Green");
+        Laptop laptop4 = new Laptop("4 Gb", "1 Tb", "Mac OS", "White");
+        Laptop laptop5 = new Laptop("3 Gb", "1 Tb", "Windows 11", "Black");
+        laptops.add(laptop1);
+        laptops.add(laptop2);
+        laptops.add(laptop3);
+        laptops.add(laptop4);
+        laptops.add(laptop5);
         Scanner scanner = new Scanner(System.in);
         filter.put(1, "ram");
         filter.put(2, "hdd");
@@ -55,34 +55,30 @@ public class task {
         if (filter.containsKey(choice)) {
             switch (choice) {
                 case 1: {
-                    System.out.printf("Введите название %s: \n", filter.get(1));
-                    System.out.print("Ввод: \n");
+                    System.out.println("Введите объем ОЗУ: ");
                     String input = scanner.next();
-                    Laptop.byRam(Laptops, input, result);
+                    Laptop.byRam(laptops, input, result);
                     showResult(result);
                     break;
                 }
                 case 2: {
-                    System.out.printf("Введите название %s : \n", filter.get(2));
-                    System.out.print("Ввод: ");
+                    System.out.println("Введите объем SSD : ");
                     String input = scanner.next();
-                    Laptop.bySSD(Laptops, input, result);
+                    Laptop.bySSD(laptops, input, result);
                     showResult(result);
                     break;
                 }
                 case 3: {
-                    System.out.printf("Введите название %s : \n", filter.get(3));
-                    System.out.print("Ввод: ");
+                    System.out.println("Введите название оперативной системы : ");
                     String input = scanner.next();
-                    Laptop.byOs(Laptops, input, result);
+                    Laptop.byOs(laptops, input, result);
                     showResult(result);
                     break;
                 }
                 case 4: {
-                    System.out.printf("Введите название %s : \n", filter.get(4));
-                    System.out.print("Ввод: ");
+                    System.out.println("Введите цвет : ");
                     String input = scanner.next();
-                    Laptop.byColor(Laptops, input, result);
+                    Laptop.byColor(laptops, input, result);
                     showResult(result);
                     break;
                 }
