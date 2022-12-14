@@ -2,6 +2,8 @@
 import controller.NoteController;
 import models.FileOperation;
 import models.FileOperationImpl;
+import models.LogManagerImpl;
+import models.Logger;
 import models.NoteManager;
 import models.NoteManagerImpl;
 import views.NoteAdder;
@@ -12,7 +14,9 @@ public class Main {
 
         FileOperation fileOperation = new FileOperationImpl("Java/OOP_seminars/homework7/notes.txt");
         NoteManager noteManagerImpl = new NoteManagerImpl(fileOperation);
-        NoteController noteController = new NoteController(noteManagerImpl);
+        NoteManager noteManagerImpl2 = new LogManagerImpl(noteManagerImpl,
+                new Logger("Java/OOP_seminars/homework7/log.txt"));
+        NoteController noteController = new NoteController(noteManagerImpl2);
         NoteAdder noteAdder = new NoteAdder();
         ViewNote view = new ViewNote(noteController, noteAdder);
         view.run();
