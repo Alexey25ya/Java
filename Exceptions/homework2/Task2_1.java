@@ -14,7 +14,7 @@ public class Task2_1 {
     }
 
     public static float getNum() {
-        float input = 0f;
+        float input;
         while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите дробное число: ");
